@@ -6,12 +6,14 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float moveSpeed = 1f; // Grid unit size for movement
-    public float moveTime = 0.3f; // Grid unit size for movement
+    public float moveSpeed = 25f; // Speed of movement between cells
+    public Vector2 gridPosition = new Vector2(0, 0); // Initial grid position
+    public float cellSize = 1f; // Size of each cell
 
-    private Vector3 _targetPosition;
-    private bool _isMoving = false;
+    private Vector3 targetPosition;
+    private Rigidbody2D _rigidbody;
     private Animator _anim;
+    private bool _isMoving = false;
 
     #region Cached Properties
 
@@ -29,48 +31,69 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         _anim = GetComponentInChildren<Animator>();
+        gridPosition = new Vector2(transform.position.x, transform.position.y);
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            MoveCharacter(Vector3.up);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            MoveCharacter(Vector3.down);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            MoveCharacter(Vector3.left);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            MoveCharacter(Vector3.right);
-        }
+        HandleInput();
+        MoveCharacter();
         AnimateCharacter();
     }
 
-    void MoveCharacter(Vector3 direction)
+    void HandleInput()
     {
-        if (direction == Vector3.left) transform.localScale = Vector3.one + Vector3.left * 2;
-        if (direction == Vector3.right) transform.localScale = Vector3.one;
+        if (_isMoving) return;
 
-        if (!_isMoving)
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            _targetPosition = transform.position + direction * moveSpeed;
-            MoveToPosition(_targetPosition);
+            gridPosition.y += 1;
+            _isMoving = true;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            gridPosition.y -= 1;
+            _isMoving = true;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            transform.localScale = Vector3.one + Vector3.left * 2;
+            gridPosition.x -= 1;
+            _isMoving = true;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            transform.localScale = Vector3.one;
+            gridPosition.x += 1;
+            _isMoving = true;
+        }
+
+        // Clamp the grid position to stay within the grid boundaries
+        //gridPosition.x = Mathf.Clamp(gridPosition.x, 0, 8);
+        //gridPosition.y = Mathf.Clamp(gridPosition.y, 0, 8);
+
+        if (_isMoving)
+        {
+            SetTargetPosition();
         }
     }
 
-    void MoveToPosition(Vector3 target)
+    void MoveCharacter()
     {
-        _isMoving = true;
-        transform.DOMove(_targetPosition, moveTime).SetEase(Ease.OutQuad).OnComplete(() =>
+        if (!_isMoving) return;
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
         {
+            transform.position = targetPosition;
             _isMoving = false;
-        });
+        }
+    }
+
+    void SetTargetPosition()
+    {
+        targetPosition = new Vector3(gridPosition.x * cellSize, gridPosition.y * cellSize, 0);
     }
 
     #region Animations
