@@ -32,4 +32,14 @@ public class Ground : MonoBehaviour
             _blockSprite.sprite = AssetManager.GetBlockSprite(newType);
         }
     }
+
+    public void WarnAttack()
+    {
+
+    }
+
+    public void TriggerAttack()
+    {
+
+    }
 }
