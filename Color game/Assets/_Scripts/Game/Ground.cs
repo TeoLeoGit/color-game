@@ -9,6 +9,7 @@ public class Ground : MonoBehaviour
     public float duration = 0.2f;   // Total duration of the tween
 
     [SerializeField] SpriteRenderer _blockSprite;
+    [SerializeField] LayerMask _damagableLayer;
     private BlockType _blockType;
     private float _glitchDuration = 0.1f; // Time between color changes
     public int _gridX;
@@ -76,17 +77,34 @@ public class Ground : MonoBehaviour
 
     void TossAndFall()
     {
-        Vector3 originalPosition = transform.position;
+        Vector3 originalPosition = _blockSprite.transform.position;
 
         // Create a sequence for the toss and fall effect
         Sequence sequence = DOTween.Sequence();
 
         // Tween to move up
-        sequence.Append(transform.DOMoveY(originalPosition.y + tossHeight, duration / 2)
+        sequence.Append(_blockSprite.transform.DOMoveY(originalPosition.y + tossHeight, duration / 2)
             .SetEase(Ease.OutQuad));
 
         // Tween to move down
-        sequence.Append(transform.DOMoveY(originalPosition.y, duration / 2)
+        sequence.Append(_blockSprite.transform.DOMoveY(originalPosition.y, duration / 2)
             .SetEase(Ease.InQuad));
+
+        CheckAndDamagePlayer();
+    }
+
+    void CheckAndDamagePlayer()
+    {
+        var hit = Physics2D.BoxCast(transform.position, Vector2.one, 0f, Vector2.right, 0f, _damagableLayer);
+        if (hit.collider != null)
+        {
+            Debug.Log($"hit {hit.collider.gameObject}");
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, Vector2.one);
     }
 }

@@ -178,5 +178,8 @@ MonoBehaviour:
   tossHeight: 0.25
   duration: 0.3
   _blockSprite: {fileID: 8909505188692517076}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 0
   _gridY: 0

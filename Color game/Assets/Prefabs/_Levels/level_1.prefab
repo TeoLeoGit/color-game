@@ -806,7 +806,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 4494037674254995350}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 0
   _gridY: 4
 --- !u!1 &150583238565732432
@@ -984,7 +989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 2432315106997783964}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 9
   _gridY: 0
 --- !u!1 &177573649757865779
@@ -1078,7 +1088,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 9049353516494278672}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 2
   _gridY: 4
 --- !u!1 &193227863596400064
@@ -1256,7 +1271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 75195768421840782}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 1
   _gridY: 2
 --- !u!1 &316239822431535569
@@ -1434,7 +1454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 6192326883371492744}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 4
   _gridY: 3
 --- !u!1 &819793094114786222
@@ -1780,7 +1805,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5680455090069881048}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 7
   _gridY: 0
 --- !u!1 &1198132994431109305
@@ -1874,7 +1904,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5743517160006865357}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 8
   _gridY: 1
 --- !u!1 &1297779747650654569
@@ -2304,7 +2339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 8596500827013560348}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 3
   _gridY: 4
 --- !u!1 &1627107759501322852
@@ -2482,7 +2522,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 270007220349454455}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 6
   _gridY: 2
 --- !u!1 &1651383858907360626
@@ -2660,7 +2705,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7150264286970008308}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 4
   _gridY: 2
 --- !u!1 &1757620621617566841
@@ -2754,7 +2804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 3146749427449611454}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 0
   _gridY: 0
 --- !u!1 &1857957903240870594
@@ -2848,7 +2903,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 2653972152603132787}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 1
   _gridY: 4
 --- !u!1 &1889339388953284427
@@ -2942,7 +3002,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1912111301430109221}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 9
   _gridY: 2
 --- !u!1 &1940329854670332954
@@ -3120,7 +3185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5163555879609245814}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 8
   _gridY: 4
 --- !u!1 &2008667428424154546
@@ -3214,7 +3284,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7967744757630954344}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 6
   _gridY: 1
 --- !u!1 &2016806252553944158
@@ -3392,7 +3467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 2969121802133869018}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 1
   _gridY: 1
 --- !u!1 &2095435859500920933
@@ -3570,7 +3650,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1489654190717855632}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 1
   _gridY: 3
 --- !u!1 &2215415422504654231
@@ -3832,7 +3917,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 4919785453775552954}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 2
   _gridY: 1
 --- !u!1 &2549872563736978386
@@ -3926,7 +4016,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 8571728749303282078}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 8
   _gridY: 0
 --- !u!1 &2742977461173131869
@@ -4104,7 +4199,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 2950621212232331692}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 0
   _gridY: 2
 --- !u!1 &2929283765290429911
@@ -4450,7 +4550,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 3274417843588550523}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 2
   _gridY: 0
 --- !u!1 &3099083879749505447
@@ -4544,7 +4649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1536094091513800207}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 5
   _gridY: 0
 --- !u!1 &3174557087621850843
@@ -4806,7 +4916,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 2015774308713220700}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 6
   _gridY: 4
 --- !u!1 &3503303583589212342
@@ -4900,7 +5015,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 244499599882052261}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 8
   _gridY: 3
 --- !u!1 &3595298957901348121
@@ -4994,7 +5114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 381871405880550173}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 0
   _gridY: 3
 --- !u!1 &4015672028317058760
@@ -5088,7 +5213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 3747931048178065653}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 5
   _gridY: 1
 --- !u!1 &4133423263361299946
@@ -5182,7 +5312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 363008450849876531}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 3
   _gridY: 3
 --- !u!1 &4148659058916484835
@@ -5360,7 +5495,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5048534548763417693}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 1
   _gridY: 0
 --- !u!1 &4604504132388983467
@@ -5515,7 +5655,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5080883082971537335}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 7
   _gridY: 1
 --- !u!1 &4680902331866237423
@@ -5693,7 +5838,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1552191068127331218}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 2
   _gridY: 2
 --- !u!1 &4822531713191286849
@@ -6039,7 +6189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5899803959856841911}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 9
   _gridY: 3
 --- !u!1 &5046943428465167260
@@ -6250,7 +6405,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7253367071106787888}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 7
   _gridY: 2
 --- !u!1 &5070768095887746384
@@ -6596,7 +6756,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 8689663100322749475}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 3
   _gridY: 2
 --- !u!1 &5393600690870984104
@@ -6774,7 +6939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 4359008995829105153}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 3
   _gridY: 0
 --- !u!1 &5480982949627361096
@@ -6952,7 +7122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5279329562593224462}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 0
   _gridY: 1
 --- !u!1 &5776048198257233875
@@ -7046,7 +7221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7881625526190196612}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 8
   _gridY: 2
 --- !u!1 &5911256515017319556
@@ -7224,7 +7404,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5500783394436674741}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 9
   _gridY: 1
 --- !u!1 &6153628858398362241
@@ -7500,7 +7685,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 6654238891550937578}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 4
   _gridY: 0
 --- !u!1 &6553697932241613604
@@ -7678,7 +7868,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 3324787185264163970}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 6
   _gridY: 0
 --- !u!1 &7053568073485045340
@@ -7772,7 +7967,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7817392486954260655}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 7
   _gridY: 3
 --- !u!1 &7166775469250625504
@@ -7866,7 +8066,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7094989438718755728}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 2
   _gridY: 3
 --- !u!1 &7169126024915125093
@@ -7960,7 +8165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1375661015759121482}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 9
   _gridY: 4
 --- !u!1 &7310062829305934834
@@ -8054,7 +8264,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 677810900832660659}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 5
   _gridY: 2
 --- !u!1 &7315271051173435469
@@ -8148,7 +8363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1818518112983675059}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 5
   _gridY: 3
 --- !u!1 &7318518671764668784
@@ -8242,7 +8462,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7764926594183878504}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 3
   _gridY: 1
 --- !u!1 &7430815749934388506
@@ -8336,7 +8561,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 1206671156016491051}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 4
   _gridY: 1
 --- !u!1 &7633569388878415738
@@ -8629,7 +8859,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 9086164141139675355}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 4
   _gridY: 4
 --- !u!1 &7923056054550091898
@@ -8975,7 +9210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 7694981502565075790}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 5
   _gridY: 4
 --- !u!1 &8152381144782596663
@@ -9153,7 +9393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 5347164559525439679}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 6
   _gridY: 3
 --- !u!1 &8366101259513534450
@@ -9247,7 +9492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.2
   _blockSprite: {fileID: 2724244408265835093}
+  _damagableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _gridX: 7
   _gridY: 4
 --- !u!1 &8526349113448457415

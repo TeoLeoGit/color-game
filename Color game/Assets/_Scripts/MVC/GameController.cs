@@ -8,7 +8,7 @@ public class GameController
     public static event Action<Vector2, BlockType> OnChangeGroundColor;
     public static event Action<Vector2, BlockType> OnWarnAttackOnBlock;
     public static event Action<Vector2> OnAttackOnBlock;
-
+    public static event Action<float> OnPlayerHealthUpdate;
 
 
     public static void ChangeGroundColor(Vector2 gridPos, BlockType type)
@@ -24,5 +24,10 @@ public class GameController
     public static void AttackOnBlock(Vector2 gridPos)
     {
         OnAttackOnBlock?.Invoke(gridPos);
+    }
+
+    public static void UpdatePlayerHealth(float updateAmount)
+    {
+        OnPlayerHealthUpdate?.Invoke(updateAmount);
     }
 }
