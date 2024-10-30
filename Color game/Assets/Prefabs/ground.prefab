@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 8517406046605603913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -175,4 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828ce4b71951424493e0bbe252c3255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tossHeight: 0.25
+  duration: 0.3
   _blockSprite: {fileID: 8909505188692517076}
+  _gridX: 0
+  _gridY: 0

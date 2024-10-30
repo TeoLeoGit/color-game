@@ -5,9 +5,10 @@ using UnityEditor;
 
 public class GridGenerator : MonoBehaviour
 {
-    public GameObject cellPrefab; // Prefab for each grid cell
+    public Ground cellPrefab; // Prefab for each grid cell
     public int columns = 9;
     public int rows = 9;
+    [SerializeField] GridAttackPlanner _attackPlanner;
 
     public void GenerateGrid()
     {
@@ -23,9 +24,11 @@ public class GridGenerator : MonoBehaviour
             for (int y = 0; y < rows; y++)
             {
                 Vector3 position = new Vector3(x, y, 0);
-                Instantiate(cellPrefab, position, Quaternion.identity, transform);
+                var instant = Instantiate(cellPrefab, position, Quaternion.identity, transform);
+                instant.SetGrid(x, y);
             }
         }
+        _attackPlanner.SetGrid(columns, rows);
     }
 }
 
