@@ -17,6 +17,6 @@ public class AssetData : ScriptableObject
 [Serializable]
 public class BlockSprite
 {
-    public BlockType blockType;
+    public ColorType blockType;
     public Sprite blockSprite;
 } 

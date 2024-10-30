@@ -10,7 +10,7 @@ public class Ground : MonoBehaviour
 
     [SerializeField] SpriteRenderer _blockSprite;
     [SerializeField] LayerMask _damagableLayer;
-    private BlockType _blockType;
+    private ColorType _blockColorType;
     private float _glitchDuration = 0.1f; // Time between color changes
     public int _gridX;
     public int _gridY;
@@ -35,20 +35,20 @@ public class Ground : MonoBehaviour
         GameController.OnAttackOnBlock -= TriggerAttack;
     }
 
-    private void ChangeBlockColor(Vector2 gridPos, BlockType newType)
+    private void ChangeBlockColor(Vector2 gridPos, ColorType newType)
     {
         if (_gridX == gridPos.x && _gridY == gridPos.y)
         {
-            _blockType = newType;
+            _blockColorType = newType;
             _blockSprite.sprite = AssetManager.GetBlockSprite(newType);
         }
     }
 
-    public void WarnAttack(Vector2 gridPos, BlockType blockType)
+    public void WarnAttack(Vector2 gridPos, ColorType blockType)
     {
         if (_gridX == gridPos.x && _gridY == gridPos.y)
         {
-            _blockType = blockType;
+            _blockColorType = blockType;
             _blockSprite.color = AssetManager.GetBlockColor(blockType);
             StartCoroutine(IGlitch());
         }
@@ -68,8 +68,7 @@ public class Ground : MonoBehaviour
 
     public void TriggerAttack(Vector2 gridPos)
     {
-        //_blockSprite.sprite = AssetManager.GetBlockSprite(_blockType);
-        if (_gridX == gridPos.x && _gridY == gridPos.y)
+        if (_gridX == (int)gridPos.x && _gridY == (int)gridPos.y)
         {
             TossAndFall();
         }
@@ -98,7 +97,7 @@ public class Ground : MonoBehaviour
         var hit = Physics2D.BoxCast(transform.position, Vector2.one, 0f, Vector2.right, 0f, _damagableLayer);
         if (hit.collider != null)
         {
-            Debug.Log($"hit {hit.collider.gameObject}");
+            GameController.DamagePlayer(_blockColorType, 2f);
         }
     }
 

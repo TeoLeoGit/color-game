@@ -245,3 +245,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 200
+  _glitchDuration: 0.05
+  _sprite: {fileID: 2824289871119847182}

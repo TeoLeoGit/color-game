@@ -21,27 +21,31 @@ public class GridAttackPlanner : MonoBehaviour
 
    IEnumerator IStartGridAttack()
     {
-        //Notify color
-        for (int i = 0; i < _columnCount; i++)
+        while (true)
         {
-            StartCoroutine(IWarnAttackOnColumn(i));
-        }
+            //Change player color.
+            ColorType playerColor = (ColorType)Random.Range(1, 5);
+            GameController.ChangePlayerColor(playerColor);
 
-        yield return new WaitForSeconds(0.2f * _columnCount); 
-        //Attack
-        for (int i = 0; i < _columnCount; i++)
-        {
-            for (int j = 0; j < _columnCount; j++)
+            for (int i = 0; i < _columnCount; i++)
+            {
+                StartCoroutine(IWarnAttackOnColumn(i));
+            }
+
+            yield return new WaitForSeconds(0.2f * _columnCount); 
+            //Attack
+            for (int i = 0; i < _columnCount; i++)
             {
                 StartCoroutine(IAttackOnColumn(i));
             }
+            yield return new WaitForSeconds(0.2f * _columnCount);
         }
     }
 
     IEnumerator IWarnAttackOnColumn(int column)
     {
         var wait = new WaitForSeconds(0.3f);
-        var blockType = (BlockType)Random.Range(1, 5);
+        var blockType = (ColorType)Random.Range(1, 5);
         for (int j = 0; j < _rowCount; j++)
         {
             GameController.WarnAttackOnBlock(new Vector2(column, j), blockType);

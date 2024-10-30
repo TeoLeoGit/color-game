@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BlockType
+public enum ColorType
 {
     Yellow = 1,
     Red = 2,
@@ -14,17 +14,17 @@ public class AssetManager : MonoBehaviour
 {
     [SerializeField] AssetData assetData;
 
-    private static Dictionary<BlockType, Sprite> _blockSpriteMap = new();
-    private static Dictionary<BlockType, Sprite> _blockNotiColor = new();
-    private static Dictionary<BlockType, Color> _blockTypeToColor = new();
+    private static Dictionary<ColorType, Sprite> _blockSpriteMap = new();
+    private static Dictionary<ColorType, Sprite> _blockNotiColor = new();
+    private static Dictionary<ColorType, Color> _blockTypeToColor = new();
 
     
-    public static Sprite GetBlockSprite(BlockType type)
+    public static Sprite GetBlockSprite(ColorType type)
     {
         return _blockSpriteMap[type];
     }
 
-    public static Color GetBlockColor(BlockType type)
+    public static Color GetBlockColor(ColorType type)
     {
         return _blockTypeToColor[type];
     }
@@ -36,9 +36,9 @@ public class AssetManager : MonoBehaviour
             _blockSpriteMap.Add(data.blockType, data.blockSprite);
         }
 
-        _blockTypeToColor.Add(BlockType.Yellow, Color.yellow);
-        _blockTypeToColor.Add(BlockType.Red, Color.red);
-        _blockTypeToColor.Add(BlockType.Green, Color.green);
-        _blockTypeToColor.Add(BlockType.Blue, Color.blue);
+        _blockTypeToColor.Add(ColorType.Yellow, Color.yellow);
+        _blockTypeToColor.Add(ColorType.Red, Color.red);
+        _blockTypeToColor.Add(ColorType.Green, Color.green);
+        _blockTypeToColor.Add(ColorType.Blue, Color.blue);
     }
 }
