@@ -11,11 +11,10 @@ public class CharacterMovement : MonoBehaviour
     public float cellSize = 1f; // Size of each cell
 
     [SerializeField] LayerMask _blockingMask;
-    private Vector3 targetPosition;
-    private Rigidbody2D _rigidbody;
-    private Animator _anim;
     private bool _isMoving = false;
     private Vector2 _gizmos;
+    private Vector3 targetPosition;
+    private Animator _anim;
     #region Cached Properties
 
     private int _currentState;

@@ -42,6 +42,7 @@ public class HealthSystem : MonoBehaviour
         if (_charColorType != colorType && !_isInvulnable)
         {
             UpdateHealth(damage);
+            MainController.PlaySound(SoundType.Hurt);
             StartCoroutine(IDamageFlash());
         }
     }
