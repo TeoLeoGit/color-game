@@ -156,6 +156,9 @@ MonoBehaviour:
   moveSpeed: 5
   gridPosition: {x: 0, y: 0}
   cellSize: 1
+  _blockingMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &8403801587903180073
 Rigidbody2D:
   serializedVersion: 4

@@ -10,11 +10,12 @@ public class CharacterMovement : MonoBehaviour
     public Vector2 gridPosition = new Vector2(0, 0); // Initial grid position
     public float cellSize = 1f; // Size of each cell
 
+    [SerializeField] LayerMask _blockingMask;
     private Vector3 targetPosition;
     private Rigidbody2D _rigidbody;
     private Animator _anim;
     private bool _isMoving = false;
-
+    private Vector2 _gizmos;
     #region Cached Properties
 
     private int _currentState;
@@ -47,30 +48,30 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
+            if (!CanMove((Vector2.up))) return;
             gridPosition.y += 1;
             _isMoving = true;
         }
         else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
+            if (!CanMove((Vector2.down))) return;
             gridPosition.y -= 1;
             _isMoving = true;
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
+            if (!CanMove((Vector2.left))) return;
             transform.localScale = Vector3.one + Vector3.left * 2;
             gridPosition.x -= 1;
             _isMoving = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
+            if (!CanMove((Vector2.right))) return;
             transform.localScale = Vector3.one;
             gridPosition.x += 1;
             _isMoving = true;
         }
-
-        // Clamp the grid position to stay within the grid boundaries
-        //gridPosition.x = Mathf.Clamp(gridPosition.x, 0, 8);
-        //gridPosition.y = Mathf.Clamp(gridPosition.y, 0, 8);
 
         if (_isMoving)
         {
@@ -94,6 +95,20 @@ public class CharacterMovement : MonoBehaviour
     void SetTargetPosition()
     {
         targetPosition = new Vector3(gridPosition.x * cellSize, gridPosition.y * cellSize, 0);
+    }
+
+    public bool CanMove(Vector3 direction)
+    {
+        var hits = Physics2D.RaycastAll(transform.position, direction, 1, _blockingMask);
+        _gizmos = transform.position + direction;
+
+        return hits.Length == 0;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, _gizmos);
     }
 
     #region Animations
