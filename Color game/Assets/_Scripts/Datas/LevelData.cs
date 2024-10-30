@@ -19,7 +19,6 @@ public class LevelData : ScriptableObject
 [Serializable]
 public class AttackPattern 
 {
-    public Vector2 startGrid;
     public AttackType type;
 }
 
