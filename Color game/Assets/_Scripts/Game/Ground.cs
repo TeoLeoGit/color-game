@@ -9,6 +9,8 @@ public class Ground : MonoBehaviour
     public float duration = 0.2f;   // Total duration of the tween
 
     [SerializeField] SpriteRenderer _blockSprite;
+    [SerializeField] SpriteRenderer _paletteSprite;
+
     [SerializeField] LayerMask _damagableLayer;
     private ColorType _blockColorType;
     private float _glitchDuration = 0.1f; // Time between color changes
@@ -26,6 +28,8 @@ public class Ground : MonoBehaviour
     {
         _gridX = x;
         _gridY = y;
+        _blockSprite.sortingOrder = -y;
+        _paletteSprite.sortingOrder = -y;
     }
 
     private void OnDestroy()
@@ -40,7 +44,7 @@ public class Ground : MonoBehaviour
         if (_gridX == gridPos.x && _gridY == gridPos.y)
         {
             _blockColorType = newType;
-            _blockSprite.sprite = AssetManager.GetBlockSprite(newType);
+            _paletteSprite.sprite = AssetManager.GetBlockSprite(newType);
         }
     }
 
@@ -49,7 +53,7 @@ public class Ground : MonoBehaviour
         if (_gridX == gridPos.x && _gridY == gridPos.y)
         {
             _blockColorType = blockType;
-            _blockSprite.color = AssetManager.GetBlockColor(blockType);
+            _paletteSprite.color = AssetManager.GetBlockColor(blockType);
             StartCoroutine(IGlitch());
         }
     }
