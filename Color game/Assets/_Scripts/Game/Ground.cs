@@ -10,6 +10,8 @@ public class Ground : MonoBehaviour
 
     [SerializeField] SpriteRenderer _blockSprite;
     [SerializeField] SpriteRenderer _paletteSprite;
+    [SerializeField] Transform _spritesTransform;
+
 
     [SerializeField] LayerMask _damagableLayer;
     private ColorType _blockColorType;
@@ -29,7 +31,7 @@ public class Ground : MonoBehaviour
         _gridX = x;
         _gridY = y;
         _blockSprite.sortingOrder = -y;
-        _paletteSprite.sortingOrder = -y;
+        _paletteSprite.sortingOrder = -y + 1;
     }
 
     private void OnDestroy()
@@ -60,12 +62,12 @@ public class Ground : MonoBehaviour
 
     private IEnumerator IGlitch()
     {
-        var blockColor = _blockSprite.color;
+        var blockColor = _paletteSprite.color;
         for (int i = 0; i < 2; i++)
         {
-            _blockSprite.color = Color.white;
+            _paletteSprite.color = Color.white;
             yield return new WaitForSeconds(_glitchDuration);
-            _blockSprite.color = blockColor;
+            _paletteSprite.color = blockColor;
             yield return new WaitForSeconds(_glitchDuration);
         }
     }
@@ -80,17 +82,17 @@ public class Ground : MonoBehaviour
 
     void TossAndFall()
     {
-        Vector3 originalPosition = _blockSprite.transform.position;
+        Vector3 originalPosition = _spritesTransform.position;
 
         // Create a sequence for the toss and fall effect
         Sequence sequence = DOTween.Sequence();
 
         // Tween to move up
-        sequence.Append(_blockSprite.transform.DOMoveY(originalPosition.y + tossHeight, duration / 2)
+        sequence.Append(_spritesTransform.DOMoveY(originalPosition.y + tossHeight, duration / 2)
             .SetEase(Ease.OutQuad));
 
         // Tween to move down
-        sequence.Append(_blockSprite.transform.DOMoveY(originalPosition.y, duration / 2)
+        sequence.Append(_spritesTransform.DOMoveY(originalPosition.y, duration / 2)
             .SetEase(Ease.InQuad));
 
         CheckAndDamagePlayer();
