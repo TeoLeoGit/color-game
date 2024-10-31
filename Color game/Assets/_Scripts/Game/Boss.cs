@@ -12,9 +12,9 @@ public class Boss : MonoBehaviour
     private int _currentState;
     private float _lockedTill;
 
-    private static readonly int Idle = Animator.StringToHash("Idle");
+    private static readonly int Idle = Animator.StringToHash("IdleBoss");
     private static readonly int Hurt = Animator.StringToHash("Hurt");
-    private static readonly int Attack = Animator.StringToHash("Attack");
+    private static readonly int Attack = Animator.StringToHash("AttackBoss");
     private static readonly int Die = Animator.StringToHash("Die");
     private static readonly int Fly = Animator.StringToHash("Fly");
 
@@ -44,6 +44,7 @@ public class Boss : MonoBehaviour
 
         // Priorities
         //if (_isMoving) return LockState(Walk, _walkAnimTime);
+        return Attack;
         return Idle;
 
         int LockState(int s, float t)
