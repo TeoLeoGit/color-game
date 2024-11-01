@@ -41,15 +41,6 @@ public class Ground : MonoBehaviour
         GameController.OnAttackOnBlock -= TriggerAttack;
     }
 
-    private void ChangeBlockColor(Vector2 gridPos, ColorType newType)
-    {
-        if (_gridX == gridPos.x && _gridY == gridPos.y)
-        {
-            _blockColorType = newType;
-            _paletteSprite.sprite = AssetManager.GetBlockSprite(newType);
-        }
-    }
-
     public void WarnAttack(Vector2 gridPos, ColorType blockType)
     {
         if (_gridX == gridPos.x && _gridY == gridPos.y)
@@ -57,6 +48,20 @@ public class Ground : MonoBehaviour
             _blockColorType = blockType;
             _paletteSprite.color = AssetManager.GetBlockColor(blockType);
             StartCoroutine(IGlitch());
+        }
+    }
+
+    public void CallColumnAttack()
+    {
+        GameController.CallGridCollumnAttack(_gridX);
+    }
+
+    private void ChangeBlockColor(Vector2 gridPos, ColorType newType)
+    {
+        if (_gridX == gridPos.x && _gridY == gridPos.y)
+        {
+            _blockColorType = newType;
+            _paletteSprite.sprite = AssetManager.GetBlockSprite(newType);
         }
     }
 

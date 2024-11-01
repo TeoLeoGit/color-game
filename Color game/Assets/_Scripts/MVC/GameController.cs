@@ -13,6 +13,7 @@ public class GameController
     public static event Action<ColorType, float> OnDamagePlayer;
     public static event Action OnBossLaunchProjectile;
     public static event Action<List<Transform>> OnBossAttack;
+    public static event Action<int> OnGridColumnAttack;
 
 
 
@@ -51,8 +52,13 @@ public class GameController
         OnBossLaunchProjectile?.Invoke();
     }
 
-    public static void CallBossAttacK(List<Transform> targets)
+    public static void CallBossAttack(List<Transform> targets)
     {
         OnBossAttack?.Invoke(targets);
+    }
+
+    public static void CallGridCollumnAttack(int column)
+    {
+        OnGridColumnAttack?.Invoke(column);
     }
 }

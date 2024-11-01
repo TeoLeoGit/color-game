@@ -6,6 +6,7 @@ public class Boss : MonoBehaviour
 {
     [SerializeField] Projectile _bossProjectile;
     [SerializeField] Transform _projectileLaunchStart;
+    [SerializeField] Transform _projectileFirstDestinate;
     private bool _isMoving = false;
     private bool _isAttacking = false;
     private int _projectileLaunchCount = 0;
@@ -69,7 +70,7 @@ public class Boss : MonoBehaviour
     void AttackProjectile()
     {
         var projectile = Instantiate(_bossProjectile, _projectileLaunchStart.position, Quaternion.identity);
-        projectile.SetTarget(_projectileTargets[_projectileLaunchCount]);
+        projectile.SetTarget(_projectileTargets[_projectileLaunchCount], _projectileFirstDestinate);
         _projectileLaunchCount++;
     }
 

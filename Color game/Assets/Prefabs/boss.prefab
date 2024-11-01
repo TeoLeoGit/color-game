@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4580150018412354022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 730342339996441338}
+  m_Layer: 10
+  m_Name: projectile_first_destinate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &730342339996441338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580150018412354022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.7, y: 14.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 199230444812723204}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5026983785826783974
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +182,7 @@ Transform:
   m_Children:
   - {fileID: 166306167290912519}
   - {fileID: 7337813931110711044}
+  - {fileID: 730342339996441338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5649826100471655657
@@ -166,8 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bossProjectile: {fileID: 5230204192102971098, guid: eeaef37a99a52cc4785258833040139e, type: 3}
-  _projectileTarget: {fileID: 0}
   _projectileLaunchStart: {fileID: 7337813931110711044}
+  _projectileFirstDestinate: {fileID: 730342339996441338}
 --- !u!1 &8286452966794219085
 GameObject:
   m_ObjectHideFlags: 0

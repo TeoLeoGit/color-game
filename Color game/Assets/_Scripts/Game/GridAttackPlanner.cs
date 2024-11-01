@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridAttackPlanner : MonoBehaviour
 {
+    [HideInInspector] public List<Transform> firstRowCells = new();
     [SerializeField] private int _columnCount;
     [SerializeField] private int _rowCount;
-
-    public List<Transform> firstRowCells = new();
 
     public void SetGrid(int columns, int rows)
     {
@@ -16,16 +16,26 @@ public class GridAttackPlanner : MonoBehaviour
         _rowCount = rows;
     }
 
+    private void Awake()
+    {
+        GameController.OnGridColumnAttack += CallAttackOnColumn;
+    }
+
     private void Start()
     {
         StartCoroutine(IStartGridAttack());
     }
 
-   IEnumerator IStartGridAttack()
+    private void OnDestroy()
+    {
+        GameController.OnGridColumnAttack -= CallAttackOnColumn;
+    }
+
+    IEnumerator IStartGridAttack()
     {
         while (true)
         {
-            GameController.CallBossAttacK(firstRowCells);
+            GameController.CallBossAttack(firstRowCells);
             yield return new WaitForSeconds(15);
             continue;
             //Change player color.
@@ -47,14 +57,30 @@ public class GridAttackPlanner : MonoBehaviour
         }
     }
 
+    void CallAttackOnColumn(int column)
+    {
+        StartCoroutine(IWarnAttackOnColumn(column));
+
+        
+    }
+
     IEnumerator IWarnAttackOnColumn(int column)
     {
-        var wait = new WaitForSeconds(0.3f);
+        var wait = new WaitForSeconds(0.15f);
         var blockType = (ColorType)Random.Range(1, 5);
         for (int j = 0; j < _rowCount; j++)
         {
             GameController.WarnAttackOnBlock(new Vector2(column, j), blockType);
             yield return wait;
+        }
+        //Attack
+        if (column == firstRowCells.Count - 1)
+        {
+            for (int i = 0; i < _columnCount; i++)
+            {
+                StartCoroutine(IAttackOnColumn(i));
+                yield return new WaitForSeconds(0.05f);
+            }
         }
     }
 
