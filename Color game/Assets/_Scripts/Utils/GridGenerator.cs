@@ -17,7 +17,7 @@ public class GridGenerator : MonoBehaviour
         {
             DestroyImmediate(child.gameObject);
         }
-
+        _attackPlanner.firstRowCells = new();
         // Generate grid
         for (int x = 0; x < columns; x++)
         {
@@ -26,6 +26,7 @@ public class GridGenerator : MonoBehaviour
                 Vector3 position = new Vector3(x, y, 0);
                 var instant = Instantiate(cellPrefab, position, Quaternion.identity, transform);
                 instant.SetGrid(x, y);
+                if (y == 0) _attackPlanner.firstRowCells.Add(instant.transform);
             }
         }
         _attackPlanner.SetGrid(columns, rows);

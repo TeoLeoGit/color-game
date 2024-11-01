@@ -5,9 +5,11 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [SerializeField] Projectile _bossProjectile;
-    [SerializeField] Transform _projectileTarget;
+    [SerializeField] Transform _projectileLaunchStart;
     private bool _isMoving = false;
     private bool _isAttacking = false;
+    private int _projectileLaunchCount = 0;
+    private List<Transform> _projectileTargets = new();
 
     private Animator _anim;
 
@@ -15,7 +17,7 @@ public class Boss : MonoBehaviour
 
     private int _currentState;
     private float _lockedTill;
-    private float _attackAnimTime = 0.2f;
+    private float _attackAnimTime = 0.3f;
 
     private static readonly int Idle = Animator.StringToHash("IdleBoss");
     private static readonly int Hurt = Animator.StringToHash("Hurt");
@@ -29,11 +31,18 @@ public class Boss : MonoBehaviour
     {
         _anim = GetComponentInChildren<Animator>();
 
+        GameController.OnBossAttack += CallAttackState;
+        GameController.OnBossLaunchProjectile += AttackProjectile;
+    }
+
+    private void OnDestroy()
+    {
+        GameController.OnBossAttack -= CallAttackState;
+        GameController.OnBossLaunchProjectile -= AttackProjectile;
     }
 
     private void Update()
     {
-        _isAttacking = true;
         AnimateCharacter();
     }
     void AnimateCharacter()
@@ -44,9 +53,24 @@ public class Boss : MonoBehaviour
         _currentState = state;
     }
 
+    void CallAttackState(List<Transform> targets)
+    {
+        StartCoroutine(ILaunchAttackOnTargets(targets));
+    }
+
+    IEnumerator ILaunchAttackOnTargets(List<Transform> targets)
+    {
+        _projectileTargets = targets;
+        _projectileLaunchCount = 0;
+        _isAttacking = true;
+        yield return new WaitUntil(() => _projectileLaunchCount == _projectileTargets.Count);
+        _isAttacking = false;
+    }
     void AttackProjectile()
     {
-        _isAttacking = true;
+        var projectile = Instantiate(_bossProjectile, _projectileLaunchStart.position, Quaternion.identity);
+        projectile.SetTarget(_projectileTargets[_projectileLaunchCount]);
+        _projectileLaunchCount++;
     }
 
     private int GetState()
@@ -54,7 +78,7 @@ public class Boss : MonoBehaviour
         if (Time.time < _lockedTill) return _currentState;
 
         // Priorities
-        if (_isMoving) return LockState(Attack, _attackAnimTime);
+        if (_isAttacking) return LockState(Attack, _attackAnimTime);
         return Idle;
 
         int LockState(int s, float t)

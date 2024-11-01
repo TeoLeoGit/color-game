@@ -11,6 +11,8 @@ public class GameController
     public static event Action<float> OnPlayerHealthUpdate;
     public static event Action<ColorType> OnChangePlayerColor;
     public static event Action<ColorType, float> OnDamagePlayer;
+    public static event Action OnBossLaunchProjectile;
+    public static event Action<List<Transform>> OnBossAttack;
 
 
 
@@ -42,5 +44,15 @@ public class GameController
     public static void DamagePlayer(ColorType colorType, float damage)
     {
         OnDamagePlayer?.Invoke(colorType, damage);
+    }
+
+    public static void LaunchBossProjectile()
+    {
+        OnBossLaunchProjectile?.Invoke();
+    }
+
+    public static void CallBossAttacK(List<Transform> targets)
+    {
+        OnBossAttack?.Invoke(targets);
     }
 }

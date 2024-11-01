@@ -14,12 +14,17 @@ public class Projectile : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();    
     }
+
+    public void SetTarget(Transform target)
+    {
+        _target = target;
+    }
  
     private void FixedUpdate()
     {
         _rb.velocity = transform.up * _speed * Time.fixedDeltaTime * 10f;
-        var direction = (_target.position - transform.position).normalized;
+        Vector2 direction = (_target.position - transform.position).normalized;
         var rotationSpeed = Vector3.Cross(transform.up, direction).z;
-        _rb.angularVelocity = -rotationSpeed * _steer * 10f;
+        _rb.angularVelocity = rotationSpeed * _steer * 10f;
     }
 }

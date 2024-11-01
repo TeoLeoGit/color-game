@@ -8,6 +8,8 @@ public class GridAttackPlanner : MonoBehaviour
     [SerializeField] private int _columnCount;
     [SerializeField] private int _rowCount;
 
+    public List<Transform> firstRowCells = new();
+
     public void SetGrid(int columns, int rows)
     {
         _columnCount = columns;
@@ -23,6 +25,9 @@ public class GridAttackPlanner : MonoBehaviour
     {
         while (true)
         {
+            GameController.CallBossAttacK(firstRowCells);
+            yield return new WaitForSeconds(15);
+            continue;
             //Change player color.
             ColorType playerColor = (ColorType)Random.Range(1, 5);
             GameController.ChangePlayerColor(playerColor);
